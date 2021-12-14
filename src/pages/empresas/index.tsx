@@ -1,14 +1,9 @@
 import { GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
-import { Experiencias } from '../components/Experiencias';
-import { Header } from '../components/Header';
-import { HomeHero } from '../components/HomeHero';
-import { Detalhes } from '../components/Detalhes';
-import { HomeContainer } from '../styles/homeStyle';
-import { Skills } from '../components/Skills';
-import { FormContato } from '../components/FormContato';
-import { Footer } from '../components/Footer';
-import { getPrismicClient } from '../services/prismic';
+import { EmpresasItem } from '../../components/EmpresasItem';
+import { Header } from '../../components/Header';
+import { EmpresasContainer } from '../../styles/empresasStyles';
+import { getPrismicClient } from '../../services/prismic';
 
 interface IEmpresa {
   slug: string;
@@ -19,23 +14,26 @@ interface IEmpresa {
   thumbnail: string;
 }
 
-interface HomeProps {
+interface IEmpresaProps {
   empresas: IEmpresa[];
 }
 
-export default function Home({ empresas }: HomeProps) {
+export default function Empresas({ empresas }: IEmpresaProps) {
   return (
-    <HomeContainer>
+    <EmpresasContainer>
       <Header />
       <main className="container">
-        <HomeHero />
-        <Experiencias />
-        <Detalhes empresas={empresas} />
-        <Skills />
-        <FormContato />
+        {empresas.map(empresa => (
+          <EmpresasItem
+            key={empresa.slug}
+            title={empresa.title}
+            type={empresa.type}
+            slug={empresa.slug}
+            imgUrl={empresa.thumbnail}
+          />
+        ))}
       </main>
-      <Footer />
-    </HomeContainer>
+    </EmpresasContainer>
   );
 }
 
