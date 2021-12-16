@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
+import Head from 'next/head';
 import { EmpresasItem } from '../../components/EmpresasItem';
 import { Header } from '../../components/Header';
 import { EmpresasContainer } from '../../styles/empresasStyles';
@@ -21,6 +22,21 @@ interface IEmpresaProps {
 export default function Empresas({ empresas }: IEmpresaProps) {
   return (
     <EmpresasContainer>
+      <Head>
+        <title>Experiências | Fabio Teraoka</title>
+        <meta
+          name="description"
+          content="Sou engenheiro mecânico com experiencia em aeronavegabilidade e estou me tornando um desenvolvedor Front-end Jr"
+        />
+        <meta property="og:image" content="/ogimage.png" />
+        <meta property="og:image:secure_url" content="/ogimage.png" />
+        <meta name="twitter:image" content="/ogimage.png" />
+        <meta name="twitter:image:src" content="/ogimage.png" />
+        <meta
+          property="og:description"
+          content="Sou engenheiro mecânico com experiencia em aeronavegabilidade e estou me tornando um desenvolvedor Front-end Jr"
+        />
+      </Head>
       <Header />
       <main className="container">
         {empresas.map(empresa => (

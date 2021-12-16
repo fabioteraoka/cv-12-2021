@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { BannerEmpresa } from '../../../components/BannerEmpresa';
 import { Header } from '../../../components/Header';
 import { getPrismicClient } from '../../../services/prismic';
@@ -28,6 +29,15 @@ export default function Empresa({ empresa }: EmpresaProps) {
   }
   return (
     <EmpresaContainer>
+      <Head>
+        <title>{empresa.title}</title>
+        <meta name="description" content={empresa.description} />
+        <meta property="og:image" content={empresa.thumbnail} />
+        <meta property="og:image:secure_url" content={empresa.thumbnail} />
+        <meta name="twitter:image" content={empresa.thumbnail} />
+        <meta name="twitter:image:src" content={empresa.thumbnail} />
+        <meta property="og:description" content={empresa.description} />
+      </Head>
       <Header />
       <BannerEmpresa
         title={empresa.title}
