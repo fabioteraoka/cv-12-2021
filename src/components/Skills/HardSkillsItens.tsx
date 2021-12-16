@@ -8,7 +8,7 @@ interface HardSkillsItensProps {
 
 export function HardSkillsItens({ title, icon }: HardSkillsItensProps) {
   return (
-    <SkillsContainer>
+    <SkillsContainer data-aos="fade-up">
       {icon}
       <p>{title}</p>
     </SkillsContainer>

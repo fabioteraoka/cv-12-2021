@@ -1,5 +1,7 @@
 import { GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
+import Aos from 'aos';
+import { useEffect } from 'react';
 import { Experiencias } from '../components/Experiencias';
 import { Header } from '../components/Header';
 import { HomeHero } from '../components/HomeHero';
@@ -9,6 +11,7 @@ import { Skills } from '../components/Skills';
 import { FormContato } from '../components/FormContato';
 import { Footer } from '../components/Footer';
 import { getPrismicClient } from '../services/prismic';
+import 'aos/dist/aos.css';
 
 interface IEmpresa {
   slug: string;
@@ -24,6 +27,10 @@ interface HomeProps {
 }
 
 export default function Home({ empresas }: HomeProps) {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <HomeContainer>
       <Header />

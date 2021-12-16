@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 export function FormContato() {
   return (
-    <Container>
+    <Container data-aos="fade-up">
       <SectionTitle
         title=" Contato"
         description={
