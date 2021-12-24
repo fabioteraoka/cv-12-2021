@@ -61,14 +61,18 @@ export const getStaticProps: GetStaticProps = async () => {
     { orderings: '[document.first_publication_date desc]' }
   );
 
-  const empresas = empresaResponse.results.map(empresa => ({
-    slug: empresa.uid,
-    title: empresa.data.title,
-    type: empresa.data.type,
-    description: empresa.data.description,
-    link: empresa.data.link.url,
-    thumbnail: empresa.data.thumbnail.url
-  }));
+  const empresas = JSON.parse(
+    JSON.stringify(
+      empresaResponse.results.map(empresa => ({
+        slug: empresa.uid,
+        title: empresa.data.title,
+        type: empresa.data.type,
+        description: empresa.data.description,
+        link: empresa.data.link.url,
+        thumbnail: empresa.data.thumbnail.url
+      }))
+    )
+  );
 
   return {
     props: {

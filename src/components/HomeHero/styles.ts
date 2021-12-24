@@ -7,7 +7,7 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   margin-top: 5rem;
-  > img {
+  > Image {
     width: 40rem;
     flex: 1;
     clip-path: ellipse(50% 46% at 50% 50%);
@@ -16,7 +16,7 @@ export const Container = styled.section`
     flex: 4;
   }
   @media (max-width: 1450px) {
-    > img {
+    > Image {
       width: 30rem;
     }
     > div {
@@ -24,7 +24,7 @@ export const Container = styled.section`
     }
   }
   @media (max-width: 1000px) {
-    > img {
+    > Image {
       width: 22rem;
     }
   }

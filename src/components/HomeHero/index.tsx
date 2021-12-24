@@ -1,11 +1,19 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
+import Image from 'next/image';
+// import Picture from '../../../public/foto.png';
 import { Container, TextContainer, InfosContainer, CodeItem } from './styles';
-import picture from '../../assets/foto.png';
 
 export function HomeHero() {
   return (
     <Container data-aos="fade-up">
-      <img src={picture} alt="Minha foto" />
+      <Image
+        className="image-container"
+        src="/foto.png"
+        alt="Landscape picture"
+        width="300rem"
+        height="400rem"
+      />
+      {/* <img src={picture} alt="Minha foto" /> */}
       <div>
         <TextContainer>
           <h1>Olá</h1>
