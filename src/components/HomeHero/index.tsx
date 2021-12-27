@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-dis'ab'le react/jsx-no-comment-textnodes */
 import Image from 'next/image';
 // import Picture from '../../../public/foto.png';
 import { Container, TextContainer, InfosContainer, CodeItem } from './styles';
@@ -16,8 +16,8 @@ export function HomeHero() {
       {/* <img src={picture} alt="Minha foto" /> */}
       <div>
         <TextContainer>
-          <h1>Olá</h1>
-          <h2>Me chamo Fábio</h2>
+          <h1>Fábio Teraoka</h1>
+          <h2>Engenheiro de Aeronavegabilidade</h2>
         </TextContainer>
         <InfosContainer>
           <CodeItem data-aos="zoom-in">
