@@ -78,14 +78,16 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const response = await prismic.getByUID('empresa', String(slug), {});
 
-  const empresa = {
-    slug: response.uid,
-    title: response.data.title,
-    type: response.data.type,
-    description: response.data.description,
-    link: response.data.link.url,
-    thumbnail: response.data.thumbnail.url
-  };
+  const empresa = JSON.parse(
+    JSON.stringify({
+      slug: response.uid,
+      title: response.data.title,
+      type: response.data.type,
+      description: response.data.description,
+      link: response.data.link.url,
+      thumbnail: response.data.thumbnail.url
+    })
+  );
 
   return {
     props: {
