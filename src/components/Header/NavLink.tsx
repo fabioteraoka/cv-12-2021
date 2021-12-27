@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { NavLinkContainer } from './styles';
