@@ -8,7 +8,12 @@ export function Experiencias() {
       <SectionTitle title=" Experiências" description="Profissionais" />
       <section>
         <ExperienciasItem
-          year="Ago/21 - atual"
+          year="Ago/22 - atual"
+          title="Voar Aviation"
+          description="Gerente de Suprimentos"
+        />
+        <ExperienciasItem
+          year="Ago/21 - Dez/21"
           title="PCA - Airworthiness"
           description="Analista de Planejamento na Itapemirim"
         />
